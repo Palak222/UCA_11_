@@ -32,7 +32,7 @@ struct ListNode* reverseBetween(struct ListNode* head, int left, int right){
         left++;
         right--;
         
-        p = p -> next;
+        p = head;
         q = head;
     }
     

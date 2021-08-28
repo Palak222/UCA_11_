@@ -41,6 +41,8 @@ void dequeue(){
 		printf("%d\n", front -> data);
 		temp = front;
 		front = temp -> link;
+		if(front == NULL)
+			rear = NULL;
 
 		free(temp);
 	}

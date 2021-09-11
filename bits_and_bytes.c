@@ -34,7 +34,10 @@ int getByte(int num, int byte){
 
 int logicalShift(int x, int n){
 
-	return (x >> n) & (~(((1 << 31) >> n) << 1));
+	
+        int mask = ~(((1 << 31) >> n) << 1);
+
+        return x >> n & mask;
 
 }
 

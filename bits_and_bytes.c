@@ -63,11 +63,11 @@ int invert(int x, int p, int n){
 
         for(int i = 0; i < n; i++){
 
-                x = x ^ mask;
+                num = num ^ mask;
                 mask = mask << 1;
         }
 
-        return (int)x;
+        return (int)num;
 }
 
 

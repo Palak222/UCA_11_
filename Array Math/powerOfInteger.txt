@@ -1,0 +1,23 @@
+public class Solution {
+    public int isPower(int A) {
+
+        if(A == 1 || A == 0)
+        {
+            return 1;
+        }
+        for(int i = 2; i <= Math.sqrt(A); i++)
+        {
+            int j = 2;
+            double p = Math.pow(i, j);
+
+            while(p <= A && p > 0)
+            {
+                if(p == A)
+                   return 1;
+                j++;
+                p = Math.pow(i, j);
+            }
+        }
+        return 0;
+    }
+}

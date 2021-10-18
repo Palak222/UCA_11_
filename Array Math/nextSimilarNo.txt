@@ -1,0 +1,54 @@
+public class Solution {
+
+    public void swap(char[] arr, int a, int b)
+    {
+          char temp = arr[a];
+          arr[a] = arr[b];
+          arr[b] = temp;
+    }
+
+    public static String toString(char[] arr)
+    {
+        String s = new String(arr);
+        return s;
+    }
+    public String solve(String A) {
+        
+        int n = A.length();
+        char[] arr = new char[n];
+        int i, j;
+        String str;
+
+        for(i = 0; i < n; i++)
+        {
+            arr[i] = A.charAt(i);
+        }
+
+        for(i = n - 1; i > 0; i--)
+        {
+            if(arr[i] > arr[i - 1])
+            {
+                break;
+            }
+        }
+        if(i == 0)
+        {
+            str = "-1";
+        }
+        else
+        {
+            char d = arr[i - 1];
+            int min = i;
+            for(j = i + 1; j < n; j++)
+            {
+                if(arr[j] > d  &&  arr[j] < arr[min])
+                   min = j;
+            }
+
+            swap(arr, i - 1, min);
+            Arrays.sort(arr, i, n);
+            str = toString(arr);
+        }
+        return str;
+    }
+}

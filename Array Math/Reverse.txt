@@ -1,0 +1,30 @@
+public class Solution {
+    public int reverse(int A) {
+
+        int  num = 0;
+        boolean flag = false;
+
+        if(A < 0)
+        {
+            A = -A;
+            flag = true;
+        }
+
+        while(A != 0)
+        {
+            int d = A % 10; 
+            if(num > Integer.MAX_VALUE / 10 || (num == Integer.MAX_VALUE / 10 && d > Integer.MAX_VALUE % 10))
+            {
+                return 0;
+            }
+            num = num * 10 + d;
+            A = A / 10;
+        }
+        if(flag)
+        {
+            num = -num;
+        }
+
+        return num;
+    }
+}
